@@ -22,7 +22,7 @@ const browserConfig = {
   },
   output: {
     ...format(pkg.browser),
-    library: 'ArkPay',
+    library: 'OckPay',
     libraryTarget: 'umd',
     umdNamedDefine: true
   }

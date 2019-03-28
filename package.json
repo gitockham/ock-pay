@@ -1,9 +1,10 @@
 {
   "name": "@arkecosystem/pay",
-  "description": "A JavaScript library to use the Ark Blockchain for payments.",
+  "description": "A JavaScript library to use the OCKHAM Blockchain for payments.",
   "version": "0.1.12",
   "contributors": [
-    "Brian Faust <brian@ark.io>"
+    "Brian Faust <brian@ark.io>",
+    "Luc Talarico <ceo@ockham.consulting>"
   ],
   "license": "MIT",
   "main": "lib/index.js",

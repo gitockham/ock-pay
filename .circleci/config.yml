@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:9-browsers
-    working_directory: ~/pay
+    working_directory: ~/ock-pay
     steps:
       - checkout
       - restore_cache:

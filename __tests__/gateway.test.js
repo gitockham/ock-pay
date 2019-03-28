@@ -1,6 +1,6 @@
 const axios = require('axios')
 const MockAdapter = require('axios-mock-adapter')
-const ArkPay = require('../lib')
+const OckPay = require('../lib')
 
 const fixture = file => require(`./fixtures/${file}.json`)
 
@@ -21,12 +21,12 @@ beforeEach(() => {
   }
 
   mock.onGet('https://min-api.cryptocompare.com/data/histoday').reply(200, fixture('rates'))
-  mock.onGet('https://raw.githubusercontent.com/ArkEcosystem/peers/master/devnet.json').reply(200, fixture('seeds'))
+  mock.onGet('https://raw.githubusercontent.com/gitockham/ock-peers/master/devnet.json').reply(200, fixture('seeds'))
 
-  gateway = new ArkPay()
+  gateway = new OckPay()
 })
 
-describe('ArkPay', () => {
+describe('OckPay', () => {
   describe('constructor', () => {
     it('should be a function', () => {
       expect(gateway.constructor).toBeFunction()
@@ -117,9 +117,9 @@ describe('ArkPay', () => {
     })
 
     it('should set the seeds', () => {
-      gateway.seeds('ark', dummyPeers)
+      gateway.seeds('ock', dummyPeers)
 
-      expect(gateway.data.seeds).toEqual({ ark: ['dexplorer.ark.io'] })
+      expect(gateway.data.seeds).toEqual({ ock: ['dexplorer.ark.io'] })
     })
   })
 
@@ -272,8 +272,8 @@ describe('ArkPay', () => {
           .recipient('DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9')
           .amount(1)
           .vendorField('thisisarandomtestingvendorfieldwhatever')
-          .currency('USD')
-          .coin('ARK')
+          .currency('EUR')
+          .coin('OCK')
           .network('devnet')
 
       gateway.data.transfer.amounts.crypto = 1
